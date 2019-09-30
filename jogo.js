@@ -18,8 +18,7 @@ function JogoXadrez() {
 	// <<<<<<<
 	var tabuleiro = new Array(8);
 	
-
-	var peca = {};
+	var peca  = new Peao("B_PAWN",1,3,1);
 
 	// Esse método inicia o jogo.
 	this.iniciar = function() {
@@ -28,10 +27,6 @@ function JogoXadrez() {
 			for(j = 0; j < 8; j++)
 				tabuleiro[i][j] = 0; // ID_1 = 0
 		}
-		peca.id = B_PAWN;
-		peca.i = 1;
-		peca.j = 3;
-		tabuleiro[peca.i][peca.j] = peca.id;
 		
 		tabuleiro[0][0] = B_ROOK;
 		tabuleiro[0][1] = B_KNIGHT;
@@ -84,32 +79,22 @@ function JogoXadrez() {
 	this.getPeca = function(i, j) {
 		// Esse é um código de exemplo.
 		// <<<<<<<
-		if (i == peca.i && j == peca.j)
+		if (i == peca.getI() && j == peca.getJ())
 			return peca;
 		// >>>>>>>
 		return null;
 	}
 
 	// Esse método move a peça para a posição i, j do tabuleiro.
-	// Se o movimento não for possível, esse método deve retornar false. Caso contrário, deve retornar true;
-	// Não é necessário se preocupar com a existência de outra peça. Caso a posição final da peça esteja ocupada por outra, a peça deverá ser substituída pela nova.
-	// Sempre que esse método for executado com sucesso (retornando true) o turno deve ser atualizado, passando o controle para o outro jogador. Obs: não é permitido que o usuário mova uma peça de outro jogador.
 	this.moverPeca = function(peca, i, j) {
-		// Não pode mover uma peça para fora do tabuleiro.
-		if (i > 7 || i < 0 || j > 7 || j < 0)
+		if(!peca.mover(tabuleiro, i, j)){
 			return false;
-
-		// Não pode mover uma peça para o mesmo lugar.
-		if (peca.i == i && peca.j == j)
-			return false;
-
-		// Esse é um comportamento de exemplo.
-		// <<<<<<<
-		tabuleiro[peca.i][peca.j] = 0;
-		tabuleiro[i][j] = peca.id;
-		peca.i = i;
-		peca.j = j;
-		// >>>>>>>
+		}
+		
+		tabuleiro[peca.getI()][peca.getJ()] = 0;
+		tabuleiro[i][j] = peca.getId();
+		peca.setI(i);
+		peca.setJ(j);
 		return true;
 	}
 }

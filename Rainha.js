@@ -2,7 +2,7 @@ function Rainha(id, i, j, cor) {
 	Peca.call(this, id, i, j, cor);
 	
 	this.mover = function(tabuleiro, _i, _j) {	
-		if !(Peca.call.mover(tabuleiro, _i, _j))
+		if (!Peca.call.mover(tabuleiro, _i, _j))
 			return false;
 		//horizontal ou vertical	
 		if (i === _i || j === _j)
