@@ -4,14 +4,20 @@ function Peao(id, i, j, cor) {
 	
 	this.mover = function(tabuleiro, _i, _j) {
 		
-		//falta na posição inicial dois saltos!!!!!!!!!!!!!!
-		//alert("a");
 		if (_i > 7 || _i < 0 || _j > 7 || _j < 0)
 			return false;
-//alert("aa");
+
 		if (this.getI() == _i && this.getJ() == _j)
 			return false;
 		
+		//dois passos na primeira jogada
+		if (this.getI() == 1  || this.getI() == 6 ){
+			if ((this.getCor() ==1 && this.getI() == _i-2 && this.getJ() == _j)||(this.getCor() ==0 && this.getI() == _i+2 && this.getJ() == _j)){
+			return true;
+		
+			}
+			
+		}
 		//vertical para frente
 		if ((this.getCor() ==1 && this.getI() == _i-1 && this.getJ() == _j)||(this.getCor() ==0 && this.getI() == _i+1 && this.getJ() == _j)){
 			return true;
