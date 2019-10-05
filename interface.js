@@ -12,7 +12,7 @@ function select(i,j) {
 
 	if (select.obj_clicado === undefined || select.obj_clicado === null) {
 		var peca = jogo.getPeca(i, j);
-
+		alert("i = "+i+" j = "+j);
 		if (peca == null)
 			return;
 
@@ -37,7 +37,12 @@ function atualizar_jogo() {
 	for (var i = 0, n = tabuleiro.rows.length; i < n; i++) {
 		for (var j = 0, m = tabuleiro.rows[i].cells.length; j < m; j++) {
 			obj = tabuleiro.rows[i].cells[j]
+			if(tabData[i][j] == 0){
 				obj.innerHTML = pecas[tabData[i][j]];
+			}else{
+				obj.innerHTML = pecas[tabData[i][j].getId()];//alterado se for 0??	
+			}
+				
 		}
 	}
 }
