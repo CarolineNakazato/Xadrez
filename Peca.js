@@ -24,8 +24,8 @@ function Peca(id, i, j, cor){
 		i = _i;
 	}
 	
-	this.setJ = function(_i) {	
-		i = _i;
+	this.setJ = function(_j) {	
+		j = _j;
 	}
 	
 	
@@ -45,7 +45,7 @@ function Peca(id, i, j, cor){
 	
 	
 	this.toString = function() {
-		return id + ": cor:" + cor +", pos i:"+i+", pos j:"+j;
+		return id + ": cor:" + cor +", pos i:"+ i +", pos j:"+j;
 	}
 
 

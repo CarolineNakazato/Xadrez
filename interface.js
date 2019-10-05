@@ -9,10 +9,11 @@ function init() {
 function select(i,j) {
 	var tabuleiro = document.getElementById('tabuleiro');
 	var obj = tabuleiro.rows[i].cells[j]
-
+	//alert("interface i = "+i+" j = "+j);
+	
 	if (select.obj_clicado === undefined || select.obj_clicado === null) {
 		var peca = jogo.getPeca(i, j);
-		alert("i = "+i+" j = "+j);
+		
 		if (peca == null)
 			return;
 
