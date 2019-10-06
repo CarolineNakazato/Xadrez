@@ -25,6 +25,15 @@ function select(i,j) {
 		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
 		select.obj_clicado = null;
 		atualizar_jogo();
+		
+		if(jogo.venceu()){
+			if(select.peca.getCor()==0){
+				alert("branco venceu!");
+			}else{
+				alert("preto venceu!");
+			}
+			reiniciar_jogo();
+		}
 	} else {
 		alert("Movimento invalido!");
 	}

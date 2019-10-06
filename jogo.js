@@ -58,6 +58,8 @@ function JogoXadrez() {
 	let W_PAWN8 = new Peao(W_PAWN,6,7,0);
 	// Esse método inicia o jogo.
 	this.iniciar = function() {
+		 vez = 1;
+		 //alert("Começa com preto!");
 		for(var i = 0; i < 8; i++) {
 			tabuleiro[i] = new Array(8);
 			for(j = 0; j < 8; j++)
@@ -112,6 +114,23 @@ function JogoXadrez() {
 
 	}
 
+	this.venceu = function() {
+		var c = 0;
+		for(var i = 0; i < 8; i++) {
+			for(j = 0; j < 8; j++)
+				if(tabuleiro[i][j]!=0){
+					if(tabuleiro[i][j].getId() == W_KING || tabuleiro[i][j].getId() == B_KING) 
+						c++;
+					}
+				}
+		alert("c "+ c);
+		if(c==2){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
 	// Esse método retorna uma referência para o objeto peça que está na posição i,j do tabuleiro.
 	// Se a posição não tiver uma peça pertencente ao jogador atual, esse método deve retornar null;
 	this.getPeca = function(i, j) {
