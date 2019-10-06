@@ -8,18 +8,15 @@ function Rainha(id, i, j, cor) {
 
 		if (this.getI() == _i && this.getJ() == _j)
 			return false;
-		//existe amigo no caminho?
 		
-		//for(var l = 0; l < 8; l++) {
-		//	for(c = 0; c < 8; c++)
-		//		if(tabuleiro[l][c]!=0){
-		//			if(tabuleiro[l][c].getColor()!=this.getColor()){//inimigo
-		//				if(c == _j){}
-					
-		//			}
-					
-		//		}
-		//}
+		
+		//existe amigo no caminho?
+	
+		
+		//falta verificar diagonal!!!!!!
+		
+		
+		
 		//horizontal ou vertical	
 		if (this.getI() == _i || this.getJ() == _j)
 			return true;

@@ -123,7 +123,7 @@ function JogoXadrez() {
 						c++;
 					}
 				}
-		alert("c "+ c);
+		//alert("c "+ c);
 		if(c==2){
 			return false;
 		}else{

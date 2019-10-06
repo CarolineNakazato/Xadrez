@@ -8,6 +8,8 @@ function Cavalo(id, i, j, cor) {
 		if (this.getI() == _i && this.getJ() == _j)
 			return false;
 		
+		
+
 		if(this.getI()-1 === _i && this.getJ()-2 === _j)
 			return true;
 		if(this.getI()+1 === _i && this.getJ()+2 === _j)

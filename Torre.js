@@ -12,7 +12,7 @@ function Torre(id, i, j, cor) {
 			return true;
 		}
 			
-
+		
 		return false;
 	}
 

@@ -7,6 +7,9 @@ function Bispo(id, i, j, cor) {
 
 		if (this.getI() == _i && this.getJ() == _j)
 			return false;
+		//problema com a diagonal!!!!!
+		
+		
 		
 		//diagonal	
 		if (_i - _j == this.getI()-this.getJ() || _i+_j == this.getI()+this.getJ())
